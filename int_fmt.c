@@ -3,16 +3,19 @@
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
 	long int num;
-printf("test");
+
 	num = va_arg(args, int);
-	printf("test: %i\n", num);
+	if (num > 2147483647)
+	{
+		_printf("Error");
+		exit(1);
+	}
 	if (num < 0)
 	{
 		*buffer.box = '-';
 		num = -num;
 		buffer.box++;
 		buffer.size += 1;
-		printf("%i\n", num);
 	}
 	else if (num == 0)
 	{
@@ -20,7 +23,6 @@ printf("test");
 		buffer.box++;
 		buffer.size += 1;
 	}
-	
 	buffer = rec_digits(num, buffer);
 		
 	buffer.box--;
