@@ -48,7 +48,6 @@ int _printf(const char *format, ...)
 
 		buffer++;
 		format++;
-		i++;
 	}
 
 	/* Print buffer to standard output */
