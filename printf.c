@@ -39,33 +39,15 @@ int _printf(const char *format, ...)
 		/* Check for conversion specifier */
 		if (*format == '%' && get_format(format + 1))
 		{
-			if (*(format + 1) == '%')
-			{
-				format++;
-				*container.box = '%';
-				container.box++;
-				container.size += 1;
-			}
-			else
-			{
-				format++;
-				if (get_format(format) == NULL)
-				{
-					format++;
-					*container.box = *format;
-					container.box++;
-					container.size += 1;
-				}
-				else
-				{
-					container = get_format(format)(container, args);
-				}
-			}
+			format++;
+			container = get_format(format)(container, args);
 		}
 		else
 		{
 			*container.box = *format;
 			container.size += 1;
+			if (*(format + 1) == '%' && *format == '%')
+				format++;
 		}
 		container.box++;
 		format++;
