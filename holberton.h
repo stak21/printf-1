@@ -14,6 +14,5 @@ typedef struct format
 	char *format;
 	void (*f)(va_list);
 } format_t;
-files
 
 #endif /* _HOLBERTON_H_ */
