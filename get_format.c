@@ -18,7 +18,6 @@ mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 
 	/* Variable initialization */
 	i = 0;
-printf("test");
 	/* Match conversion specifier to correct function */
 	while (formats[i].format && formats[i].format[0])
 	{
