@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * upp_hex_fmt - Handles conversion specifier "X"
+ * @buffer: Pointer to struct buffer
+ * @args: the integer to be converted to uppercase hex
+ *
+ * Return: Pointer to struct buffer.
+ */
 mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args)
 {
 	int num, temp, i, len;

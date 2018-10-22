@@ -1,5 +1,12 @@
 #include "holberton.h"
 
+/**
+ * low_hex_fmt - Handles conversion specifier "x"
+ * @buffer: Pointer to struct buffer
+ * @args: the integer to be converted to lowercase hex
+ *
+ * Return: Pointer to struct buffer.
+ */
 mk_buffer low_hex_fmt(mk_buffer buffer, va_list args)
 {
 	int num, temp, i, len;
