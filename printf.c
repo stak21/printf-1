@@ -19,18 +19,7 @@ int _printf(const char *format, ...)
 		write(1, "Error\n", 6);
 		exit(98);
 	}
-
-	/* Variable initialization */
-	container.size = 0;
-	container.box = malloc(sizeof(char) * 1024);
-	container.start = container.box;
-	if (!container.box)
-	{
-		write(1, "Error\n", 6);
-		exit(99);
-	}
-	container.start = container.box;
-
+	container = create_buffer(container);
 	va_start(args, format);
 
 	/* Buffer allocation */
