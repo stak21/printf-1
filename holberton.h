@@ -7,11 +7,15 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+char *(*get_format(const char *format))(char *, va_list, unsigned int);
+char *char_fmt(char *buffer, va_list args, unsigned int size);
+char *str_fmt(char *buffer, va_list args, unsigned int size);
+char *int_fmt(char *buffer, va_list args, unsigned int size);
 
 typedef struct format
 {
 	char *format;
-	void (*f)(va_list);
+	char *(*f)(char *, va_list, unsigned int);
 } format_t;
-char *char_fmt(char *buffer, va_list args, int size);
+
 #endif /* _HOLBERTON_H_ */
