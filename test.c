@@ -9,6 +9,6 @@
 
 int main(void)
 {
-	printf("test: %\n", 0);
+	write(1,"string", 7);
 	return (0);
 }
