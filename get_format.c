@@ -11,6 +11,8 @@ mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
 	{"R", rot13_fmt},
 	{"d", int_fmt},
 	{"i", int_fmt},
+	{"x", low_hex_fmt},
+	{"X", upp_hex_fmt},
 	{NULL, NULL}
 	};
 
