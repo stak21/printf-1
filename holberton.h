@@ -32,5 +32,6 @@ mk_buffer rot13_fmt(mk_buffer buffer, va_list args);
 
 /* Helper functions */
 unsigned int _strlen(char *str);
+mk_buffer rec_digits(int, mk_buffer);
 
 #endif /* _HOLBERTON_H_ */
