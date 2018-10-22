@@ -5,8 +5,6 @@ int _printf(const char *format, ...)
 	/* Variable declaration */
 	va_list args;
 	unsigned int size;
-	char *buffer, *start;
-
 	mk_buffer container;
 	
 	/* Check if format is NULL */
@@ -21,13 +19,12 @@ int _printf(const char *format, ...)
 	container.size = 0;
 	container.box = malloc(sizeof(char) * 1024);
 	container.start = container.box;
-	buffer = malloc(sizeof(char) * 1024);
-	if (!buffer)
+	if (!container.box)
 	{
 		write(1, "Error\n", 6);
 		exit(99);
 	}
-	start = buffer;
+	container.start = container.box;
 
 	va_start(args, format);
 
@@ -38,23 +35,23 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			buffer = get_format(format)(buffer, args, size);
+			container = get_format(format)(container, args);
 		}
 		else
 		{
-			*buffer = *format;
-			size += 1;
+			*container.box = *format;
+			container.size += 1;
 		}
 
-		buffer++;
+		container.box++;
 		format++;
 	}
 
 	/* Print buffer to standard output */
-	write(1, start, 100);
+	write(1, container.start, 100);
 
-	free(start);
+	free(container.start);
 	va_end(args);
-
-	return (size);
+	printf("size at end:%i\n", container.size);
+	return (container.size);
 }

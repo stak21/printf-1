@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-char *str_fmt(char *buffer, va_list args, unsigned int size)
+mk_buffer str_fmt(mk_buffer buffer, va_list args)
 {
 	char *str;
 
@@ -8,13 +8,13 @@ char *str_fmt(char *buffer, va_list args, unsigned int size)
 
 	while (*str)
 	{
-		*buffer = *str;
+		*buffer.box = *str;
 
-		size += 1;
-		buffer++;
+		buffer.size += 1;
+		buffer.box++;
 		str++;
 	}
 
-	buffer--;
+	buffer.box--;
 	return (buffer);
 }
