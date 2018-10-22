@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-char *(*get_format(const char *format))(char *, va_list)
+char *(*get_format(const char *format))(char *, va_list, unsigned int)
 {
 	/* Variable declaration */
 	int i;

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -7,11 +5,12 @@
 * 
 */
 
-char *char_fmt(char *buffer, va_list args, int size)
+char *char_fmt(char *buffer, va_list args, unsigned int size)
 {
-	char c = va_arg(args, char);
+	char c = (char)va_arg(args, int);
 
-	printf("%c", c);
-	
+	*buffer = c;
+	size += 1;
+
 	return (buffer);
 }
