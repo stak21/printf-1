@@ -1,15 +1,15 @@
 #include "holberton.h"
 
-int (*get_format(const char *format))(char *, va_list)
+char *(*get_format(const char *format))(char *, va_list)
 {
 	/* Variable declaration */
 	int i;
 	format_t formats[] = {
 	{"c", char_fmt},
-	{"s", str_fmt},
+/*	{"s", str_fmt},
 	{"d", int_fmt},
-	{"i", int_fmt},
-	{NULL, NULL}
+	{"i", int_fmt}, */
+	{NULL, NULL} 
 	};
 
 	/* Variable initialization */
