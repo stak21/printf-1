@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		/* Check for conversion specifier */
-		if (*format == '%')
+		if (*format == '%' && get_format(format + 1))
 		{
 			format++;
 			container = get_format(format)(container, args);

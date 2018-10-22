@@ -20,7 +20,7 @@ mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 	i = 0;
 
 	/* Match conversion specifier to correct function */
-	while (formats[i].format[0])
+	while (formats[i].format && formats[i].format[0])
 	{
 		/* If match is found return pointer to correct function */
 		if (*format == formats[i].format[0])
