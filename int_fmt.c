@@ -1,35 +1,43 @@
 #include "holberton.h"
 
-char *int_fmt(char *buffer, va_list args, unsigned int size)
+mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
-	int num;
-	unsigned int uns_num;
+	long int num;
 
 	num = va_arg(args, int);
-
+	if (num > 2147483647)
+	{
+		_printf("Error");
+		exit(1);
+	}
 	if (num < 0)
 	{
-		*buffer = '-';
-		num -= num;
-		buffer++;
-		size += 1;
+		*buffer.box = '-';
+		num = -num;
+		buffer.box++;
+		buffer.size += 1;
 	}
-
-	uns_num = num;
-
-	while (num / 10)
+	else if (num == 0)
 	{
-		*buffer = uns_num / 10 + '0';
-		num /= 10;
-		buffer++;
-		size += 1;
-
-		if (!(uns_num / 10))
-		{
-			*buffer = uns_num % 10 + '0';
-			size += 1;
-		}
+		*buffer.box = '0';
+		buffer.box++;
+		buffer.size += 1;
 	}
-
+	buffer = rec_digits(num, buffer);
+		
+	buffer.box--;
 	return (buffer);
+}
+mk_buffer rec_digits(int num, mk_buffer buffer)
+{
+	if (num == 0)
+		return (buffer);
+	else
+		buffer = rec_digits(num / 10, buffer);
+
+	*buffer.box = num % 10 + '0';
+	buffer.box++;
+	buffer.size += 1;
+
+	return(buffer);
 }

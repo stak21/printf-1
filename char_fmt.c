@@ -5,12 +5,12 @@
 * 
 */
 
-char *char_fmt(char *buffer, va_list args, unsigned int size)
+mk_buffer char_fmt(mk_buffer buffer, va_list args)
 {
 	char c = (char)va_arg(args, int);
 
-	*buffer = c;
-	size += 1;
+	*buffer.box = c;
+	buffer.size += 1;
 
 	return (buffer);
 }

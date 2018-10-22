@@ -1,15 +1,24 @@
 #include "holberton.h"
 
-char *(*get_format(const char *format))(char *, va_list, unsigned int)
+mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
 {
 	/* Variable declaration */
 	int i;
 	format_t formats[] = {
 	{"c", char_fmt},
 	{"s", str_fmt},
+	{"r", rev_fmt},
+	{"R", rot13_fmt},
 	{"d", int_fmt},
+<<<<<<< HEAD
 	{"i", int_fmt}, 
 	{NULL, NULL} 
+=======
+	{"i", int_fmt},
+	{"x", low_hex_fmt},
+	{"X", upp_hex_fmt},
+	{NULL, NULL}
+>>>>>>> shoji
 	};
 
 	/* Variable initialization */
