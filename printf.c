@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			get_format(format)(buffer, args);
+			get_format(format)(buffer, args, 18);
 		}
 		else
 		{
