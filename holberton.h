@@ -28,6 +28,7 @@ mk_buffer char_fmt(mk_buffer, va_list args);
 mk_buffer str_fmt(mk_buffer, va_list args);
 mk_buffer int_fmt(mk_buffer, va_list args);
 mk_buffer rev_fmt(mk_buffer, va_list args);
+mk_buffer rot13_fmt(mk_buffer buffer, va_list args);
 
 /* Helper functions */
 unsigned int _strlen(char *str);
