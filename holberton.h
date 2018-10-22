@@ -6,8 +6,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-unsigned int _strlen(char *str);
-void *_buffer(char *str);
+int _printf(const char *format, ...);
 
 typedef struct format
 {
