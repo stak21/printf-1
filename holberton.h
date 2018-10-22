@@ -6,12 +6,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int _printf(const char *format, ...);
-char *(*get_format(const char *format))(char *, va_list, unsigned int);
-char *char_fmt(char *buffer, va_list args, unsigned int size);
-char *str_fmt(char *buffer, va_list args, unsigned int size);
-char *int_fmt(char *buffer, va_list args, unsigned int size);
-
 typedef struct storage
 {
 	int size;
@@ -22,7 +16,19 @@ typedef struct storage
 typedef struct format
 {
 	char *format;
-	char *(*f)(char *, va_list, unsigned int);
+	mk_buffer (*f)(mk_buffer, va_list);
 } format_t;
+
+/* Essential functions */
+int _printf(const char *format, ...);
+
+/* Conversion specifier functions */
+mk_buffer (*get_format(const char *format))(mk_buffer, va_list);
+mk_buffer char_fmt(mk_buffer, va_list args);
+mk_buffer str_fmt(mk_buffer, va_list args);
+mk_buffer int_fmt(mk_buffer, va_list args);
+
+/* Helper functions */
+unsigned int _strlen(char *str);
 
 #endif /* _HOLBERTON_H_ */
