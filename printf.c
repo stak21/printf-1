@@ -7,6 +7,8 @@ int _printf(const char *format, ...)
 	unsigned int size;
 	char *buffer, *start;
 
+	mk_buffer container;
+	
 	/* Check if format is NULL */
 	if (!format)
 	{
@@ -16,6 +18,9 @@ int _printf(const char *format, ...)
 
 	/* Variable initialization */
 	size = 0;
+	container.size = 0;
+	container.box = malloc(sizeof(char) * 1024);
+	container.start = container.box;
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
 	{

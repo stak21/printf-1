@@ -12,6 +12,13 @@ char *char_fmt(char *buffer, va_list args, unsigned int size);
 char *str_fmt(char *buffer, va_list args, unsigned int size);
 char *int_fmt(char *buffer, va_list args, unsigned int size);
 
+typedef struct storage
+{
+	int size;
+	char *box;
+	char *start;
+} mk_buffer;
+
 typedef struct format
 {
 	char *format;
