@@ -5,6 +5,7 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 	int num;
 	unsigned int uns_num;
 
+
 	num = va_arg(args, int);
 
 	if (num < 0)
@@ -17,10 +18,10 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 
 	uns_num = num;
 
-	while (num / 10)
+	while (uns_num / 10)
 	{
 		*buffer.box = (uns_num / 10 + '0');
-		num /= 10;
+		uns_num %= 10;
 		buffer.box++;
 		buffer.size += 1;
 
@@ -31,6 +32,5 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 			buffer.size += 1;
 		}
 	}
-
 	return (buffer);
 }

@@ -7,6 +7,7 @@ mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
 	format_t formats[] = {
 	{"c", char_fmt},
 	{"s", str_fmt},
+	{"r", rev_fmt},
 	{"d", int_fmt},
 	{"i", int_fmt},
 	{NULL, NULL}

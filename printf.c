@@ -40,18 +40,20 @@ int _printf(const char *format, ...)
 			*container.box = *format;
 			container.size += 1;
 		}
-
 		container.box++;
 		format++;
 	}
 
 	/* Print buffer to standard output */
+<<<<<<< HEAD
 	int i = 0;
 	while (i < 20)
 	{
 		printf(".%c", container.start[i]);
 		i += 1;
 	}
+=======
+>>>>>>> 5fb450373944aee157c920ea57ee3d053872f146
 	write(1, container.start, container.size);
 
 	free(container.start);
