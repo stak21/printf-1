@@ -9,6 +9,6 @@
 
 int main(void)
 {
-	write(1,"string", 7);
+	write(1, start, 6);
 	return (0);
 }
