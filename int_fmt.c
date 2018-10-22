@@ -2,12 +2,14 @@
 
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
-	int num;
-	unsigned int uns_num;
-
+	long int num;
 
 	num = va_arg(args, int);
-
+	if (num > 2147483647)
+	{
+		_printf("Error");
+		exit(1);
+	}
 	if (num < 0)
 	{
 		*buffer.box = '-';
@@ -15,22 +17,27 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 		buffer.box++;
 		buffer.size += 1;
 	}
-
-	uns_num = num;
-
-	while (uns_num / 10)
+	else if (num == 0)
 	{
-		*buffer.box = (uns_num / 10 + '0');
-		uns_num %= 10;
+		*buffer.box = '0';
+		buffer.box++;
+		buffer.size += 1;
+	}
+
+	while (num / 10)
+	{
+		*buffer.box = (num / 10 + '0');
+		num %= 10;
 		buffer.box++;
 		buffer.size += 1;
 
-		if (uns_num / 10 == 0)
+		if (num / 10 == 0)
 		{
-			*buffer.box = (uns_num % 10 + '0');
+			*buffer.box = (num % 10 + '0');
 			buffer.box++;
 			buffer.size += 1;
 		}
 	}
+	buffer.box--;
 	return (buffer);
 }
