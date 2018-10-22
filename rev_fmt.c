@@ -15,6 +15,7 @@ mk_buffer rev_fmt(mk_buffer buffer, va_list args)
 		buffer.size++;
 		len--;
 	}
+
 	buffer.box--;
 	return (buffer);
 }
