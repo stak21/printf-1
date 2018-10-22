@@ -6,6 +6,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+* struct storage - structure that holds information on the buffer
+* @size: holds the size to write from the buffer
+* @box: pointer to the array
+* @start: pointer to the beginning of the array, will not be modified
+*/
 typedef struct storage
 {
 	int size;
@@ -13,17 +19,23 @@ typedef struct storage
 	char *start;
 } mk_buffer;
 
+/**
+* struct format - a structure that holds the string to be printed and a format
+* checker function pointer
+* @format: holds the string to print
+* @f: a function pointer
+*/
 typedef struct format
 {
 	char *format;
-	mk_buffer (*f)(mk_buffer, va_list);
+	mk_buffer(*f)(mk_buffer, va_list);
 } format_t;
 
 /* Essential functions */
 int _printf(const char *format, ...);
 
 /* Conversion specifier functions */
-mk_buffer (*get_format(const char *format))(mk_buffer, va_list);
+mk_buffer(*get_format(const char *format))(mk_buffer, va_list);
 mk_buffer char_fmt(mk_buffer, va_list args);
 mk_buffer str_fmt(mk_buffer, va_list args);
 mk_buffer int_fmt(mk_buffer, va_list args);

@@ -1,11 +1,18 @@
 #include "holberton.h"
 
+/**
+ * _printf - Creates a buffer and writes that buffer to standard output
+ * @format: the string to be printed, may contain conversion specifiers
+ * which placehold for other data types to be printed
+ *
+ * Return: The number of characters printed.
+ */
 int _printf(const char *format, ...)
 {
 	/* Variable declaration */
 	va_list args;
 	mk_buffer container;
-	
+
 	/* Check if format is NULL */
 	if (!format)
 	{
@@ -30,7 +37,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		/* Check for conversion specifier */
-		if (*format == '%')
+		if (*format == '%' && get_format(format + 1))
 		{
 			if (*(format + 1) == '%')
 			{
