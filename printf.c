@@ -4,9 +4,11 @@ int _printf(const char *format, ...)
 {
 	/* Variable declaration */
 	va_list args;
-	unsigned int i, size;
+	unsigned int size;
 	char *buffer, *start;
 
+	mk_buffer container;
+	
 	/* Check if format is NULL */
 	if (!format)
 	{
@@ -16,6 +18,9 @@ int _printf(const char *format, ...)
 
 	/* Variable initialization */
 	size = 0;
+	container.size = 0;
+	container.box = malloc(sizeof(char) * 1024);
+	container.start = container.box;
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
 	{
@@ -33,7 +38,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			get_format(format)(buffer, args, 18);
+			buffer = get_format(format)(buffer, args, size);
 		}
 		else
 		{
@@ -47,9 +52,9 @@ int _printf(const char *format, ...)
 	}
 
 	/* Print buffer to standard output */
-	write(1, start, size);
+	write(1, start, 100);
 
-	free(buffer);
+	free(start);
 	va_end(args);
 
 	return (size);
