@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
+mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 {
 	/* Variable declaration */
 	int i;

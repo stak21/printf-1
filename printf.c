@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 	}
 
 	/* Print buffer to standard output */
-	printf("\n");
+	printf("\n"); 
 	write(1, container.start, container.size);
 
 	free(container.start);

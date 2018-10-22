@@ -14,7 +14,7 @@ mk_buffer rev_fmt(mk_buffer buffer, va_list args)
 
 	str = va_arg(args, char *);
 	len = _strlen(str);
-
+	len--;
 	while (len >= 0)
 	{
 		*buffer.box = str[len];
