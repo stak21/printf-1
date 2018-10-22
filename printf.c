@@ -4,7 +4,7 @@ int _printf(const char *format, ...)
 {
 	/* Variable declaration */
 	va_list args;
-	unsigned int i, size;
+	unsigned int size;
 	char *buffer, *start;
 
 	/* Check if format is NULL */
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			get_format(format)(buffer, args, 18);
+			buffer = get_format(format)(buffer, args, size);
 		}
 		else
 		{
@@ -43,13 +43,12 @@ int _printf(const char *format, ...)
 
 		buffer++;
 		format++;
-		i++;
 	}
 
 	/* Print buffer to standard output */
-	write(1, start, size);
+	write(1, start, 100);
 
-	free(buffer);
+	free(start);
 	va_end(args);
 
 	return (size);
