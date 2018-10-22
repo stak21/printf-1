@@ -8,6 +8,7 @@ mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
 	{"c", char_fmt},
 	{"s", str_fmt},
 	{"r", rev_fmt},
+	{"R", rot13_fmt},
 	{"d", int_fmt},
 	{"i", int_fmt},
 	{NULL, NULL}
