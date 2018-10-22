@@ -6,9 +6,9 @@ char *(*get_format(const char *format))(char *, va_list)
 	int i;
 	format_t formats[] = {
 	{"c", char_fmt},
-/*	{"s", str_fmt},
+	{"s", str_fmt},
 	{"d", int_fmt},
-	{"i", int_fmt}, */
+	{"i", int_fmt}, 
 	{NULL, NULL} 
 	};
 
