@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
+mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 {
 	/* Variable declaration */
 	int i;
@@ -10,15 +10,10 @@ mk_buffer (*get_format(const char *format))(mk_buffer buffer, va_list)
 	{"r", rev_fmt},
 	{"R", rot13_fmt},
 	{"d", int_fmt},
-<<<<<<< HEAD
-	{"i", int_fmt}, 
-	{NULL, NULL} 
-=======
 	{"i", int_fmt},
 	{"x", low_hex_fmt},
 	{"X", upp_hex_fmt},
 	{NULL, NULL}
->>>>>>> shoji
 	};
 
 	/* Variable initialization */
