@@ -50,6 +50,5 @@ int _printf(const char *format, ...)
 
 	free(container.start);
 	va_end(args);
-	printf("\nsize at end:%i\n", container.size);
 	return (container.size);
 }
