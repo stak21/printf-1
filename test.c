@@ -9,6 +9,6 @@
 
 int main(void)
 {
-	write(1, start, 6);
+	_printf("string%c", 'c');
 	return (0);
 }
