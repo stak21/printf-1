@@ -9,9 +9,9 @@
  */
 int main(void)
 {
-	int i, j;
-	i = j = 0;
-	/*printf("1. %i, %d\n", 1, 1);
+/*	int i, j;
+	i = j = 0; */
+printf("1. %i, %d\n", 1, 1);
 	_printf("1. %i, %d\n", 1, 1);
 
 	printf("2. %i, %d\n", -1, -1);
@@ -24,8 +24,7 @@ int main(void)
 	_printf("4. %i, %d\n");
 	_printf("5. %i, %d\n", INT_MIN, INT_MAX);
 	printf("5. %i, %d\n", INT_MIN, INT_MAX);
-
-*/
+/*
 i = printf("G1.1hello\n");
 j = _printf("P1.1hello\n");
 printf("\nG: %i, P: %i\n", i, j);
@@ -84,5 +83,6 @@ printf("\nG: %i, P: %i\n", i, j);
 i = printf("G17.  %");
 j = _printf("P17.  %");
 printf("\nG: %i, P: %i\n", i, j);
+*/
     return (0);
 }

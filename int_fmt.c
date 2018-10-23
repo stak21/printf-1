@@ -1,9 +1,16 @@
 #include "holberton.h"
 
+/**
+* int_fmt - adds the integer into the buffer
+* @buffer: holds the members for box, size and startls
+* @args: list of passed in variables
+* Return: returns the buffer struct
+*/
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
 	long int num;
-	unsigned lnum;
+	unsigned int lnum;
+
 	num = va_arg(args, int);
 	if (num > 214748364799)
 	{
@@ -12,8 +19,7 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 	}
 	if (num < 0)
 	{
-		num = -((unsigned int)num);
-		lnum = num;
+		lnum = (unsigned int)num;
 		buffer = add_buff(buffer, args, 0, '-');
 	}
 	else if (num == 0)
@@ -26,6 +32,13 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 	buffer.box--;
 	return (buffer);
 }
+
+/**
+* rec_digits - records the integer into the buffer
+* @lnum: the long number to be converted
+* @buffer: holds the members for the box, size and startls
+* Return: returns the buffer struct
+*/
 mk_buffer rec_digits(int lnum, mk_buffer buffer)
 {
 	if (lnum == 0)
