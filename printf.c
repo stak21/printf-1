@@ -13,33 +13,11 @@ int _printf(const char *format, ...)
 	va_list args;
 	mk_buffer container;
 
-	/* Check if format is NULL */
-	if (!format)
-<<<<<<< HEAD
 	check_null(format);
-
-	/* Variable initialization */
-	container.size = 0;
-	container.box = malloc(sizeof(char) * 1024);
-	container.start = container.box;
-	if (!container.box)
-=======
->>>>>>> 6e081e3edcaf3c2536dd15fb62a5ee31c08b4095
-	{
-		write(1, "Error\n", 6);
-		exit(98);
-	}
 	container = create_buffer(container);
-<<<<<<< HEAD
-
-=======
->>>>>>> 6e081e3edcaf3c2536dd15fb62a5ee31c08b4095
 	va_start(args, format);
-
-	/* Buffer allocation */
 	while (*format)
 	{
-		/* Check for conversion specifier */
 		if (*format == '%' && get_format(format + 1))
 		{
 			format++;
@@ -55,10 +33,7 @@ int _printf(const char *format, ...)
 		container.box++;
 		format++;
 	}
-
-	/* Print buffer to standard output */
 	write(1, container.start, container.size);
-
 	free(container.start);
 	va_end(args);
 	return (container.size);
