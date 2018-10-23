@@ -48,6 +48,9 @@ mk_buffer low_hex_fmt(mk_buffer buffer, va_list args);
 unsigned int _strlen(char *str);
 mk_buffer rec_digits(int, mk_buffer);
 mk_buffer create_buffer(mk_buffer);
+<<<<<<< HEAD
 void check_null(const char *);
 
+=======
+>>>>>>> 6e081e3edcaf3c2536dd15fb62a5ee31c08b4095
 #endif /* _HOLBERTON_H_ */
