@@ -3,7 +3,8 @@
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
 	long int num;
-	unsigned lnum;
+	unsigned int lnum;
+
 	num = va_arg(args, int);
 	if (num > 214748364799)
 	{
