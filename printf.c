@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				format++;
 				continue;
 			}
-			else if (*(format + 1) == '\n')
+			else if (*(format + 1) == '\n' && *format == '%')
 			{
 				container = add_buff(container, args, 0, '%');
 				format++;
