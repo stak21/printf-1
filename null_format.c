@@ -8,6 +8,9 @@
  */
 void check_null(const char *format)
 {
-	write(1, "Error\n", 6);
-	exit(98);
+	if (!format)
+	{
+		write(1, "Error\n", 6);
+		exit(98);
+	}
 }
