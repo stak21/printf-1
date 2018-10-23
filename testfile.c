@@ -26,7 +26,6 @@ int main(void)
 	printf("5. %i, %d\n", INT_MIN, INT_MAX);
 
 */
-/*
 i = printf("G1.1hello\n");
 j = _printf("P1.1hello\n");
 printf("\nG: %i, P: %i\n", i, j);
@@ -69,11 +68,9 @@ printf("\nG: %i, P: %i\n", i, j);
 i = printf("G12. 1234567890qwertyuioplkjhgfdsazxcvbnm,.`[]';/.,~!@#$^&*()_+=|\\\n"); 
 j = _printf("P12. 1234567890qwertyuioplkjhgfdsazxcvbnm,.`[]';/.,~!@#$^&*()_+=|\\\n"); 
 printf("\nG: %i, P: %i\n", i, j);
-*/
 i = printf("G13. %s%s\n", "hello", "hello");
 j = _printf("P13. %s%s\n", "hello", "hello");
 printf("\nG: %i, P: %i\n", i, j);
-/*
 i = printf("G14. %%i\n"); 
 j = _printf("P14. %%i\n");
 printf("\nG: %i, P: %i\n", i, j);
@@ -87,6 +84,5 @@ printf("\nG: %i, P: %i\n", i, j);
 i = printf("G17.  %");
 j = _printf("P17.  %");
 printf("\nG: %i, P: %i\n", i, j);
-*/
     return (0);
 }
