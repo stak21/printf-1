@@ -43,6 +43,8 @@ mk_buffer rev_fmt(mk_buffer, va_list args);
 mk_buffer rot13_fmt(mk_buffer buffer, va_list args);
 mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args);
 mk_buffer low_hex_fmt(mk_buffer buffer, va_list args);
+mk_buffer space_fmt(mk_buffer container, const char *format, va_list args);
+mk_buffer default_fmt(mk_buffer container, const char *format);
 
 /* Helper functions */
 unsigned int _strlen(char *str);
