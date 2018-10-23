@@ -9,7 +9,6 @@
  */
 int _printf(const char *format, ...)
 {
-	/* Variable declaration */
 	va_list args;
 	mk_buffer container;
 
