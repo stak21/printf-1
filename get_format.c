@@ -13,9 +13,11 @@ mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 	{"i", int_fmt},
 	{"x", low_hex_fmt},
 	{"X", upp_hex_fmt},
+	{" ", spc_fmt},
+	{"\n", nl_fmt},
+	{"\0", NULL},
 	{NULL, NULL}
 	};
-
 	/* Variable initialization */
 	i = 0;
 	/* Match conversion specifier to correct function */
@@ -29,6 +31,5 @@ mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 
 		i++;
 	}
-
 	return (NULL);
 }

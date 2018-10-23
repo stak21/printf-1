@@ -13,14 +13,18 @@ mk_buffer str_fmt(mk_buffer buffer, va_list args)
 
 	str = va_arg(args, char *);
 
+		printf("start: %c\n", *(buffer.box - 1));
 	while (*str)
 	{
 		*buffer.box = *str;
+		printf("inside %c\n", *buffer.box);
 
 		buffer.size += 1;
 		buffer.box++;
 		str++;
 	}
+
+		printf("end: %c\n", *buffer.box);
 	buffer.box--;
 	return (buffer);
 }
