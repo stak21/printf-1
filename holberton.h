@@ -45,10 +45,13 @@ mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args);
 mk_buffer low_hex_fmt(mk_buffer buffer, va_list args);
 mk_buffer space_fmt(mk_buffer container, const char *format, va_list args);
 mk_buffer default_fmt(mk_buffer container, const char *format);
+mk_buffer nl_fmt(mk_buffer buff, va_list var);
+mk_buffer spc_fmt(mk_buffer buff, va_list var);
 
 /* Helper functions */
 unsigned int _strlen(char *str);
 mk_buffer rec_digits(int, mk_buffer);
 mk_buffer create_buffer(mk_buffer);
+mk_buffer add_buff(mk_buffer buff, va_list var, const char *fmt, char custom);
 void check_null(const char *);
 #endif /* _HOLBERTON_H_ */
