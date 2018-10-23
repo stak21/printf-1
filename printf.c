@@ -15,10 +15,7 @@ int _printf(const char *format, ...)
 
 	/* Check if format is NULL */
 	if (!format)
-	{
-		write(1, "Error\n", 6);
-		exit(98);
-	}
+	check_null(format);
 
 	/* Variable initialization */
 	container.size = 0;
@@ -27,9 +24,9 @@ int _printf(const char *format, ...)
 	if (!container.box)
 	{
 		write(1, "Error\n", 6);
-		exit(99);
+		exit(98);
 	}
-	container.start = container.box;
+	container = create_buffer(container);
 
 	va_start(args, format);
 
