@@ -10,10 +10,9 @@
 
 mk_buffer cap_s_fmt(mk_buffer buff, va_list var)
 {
-	int i, j, len;
-	char *str, *null_string;
+	int i, j;
+	char *str;
 	char *hex;
-	null_string = "(null)";
 	str = va_arg(var, char *);
 	i = 0;
 	j = 0;
