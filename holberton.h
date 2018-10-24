@@ -47,6 +47,8 @@ mk_buffer space_fmt(mk_buffer container, const char *format, va_list args);
 mk_buffer default_fmt(mk_buffer container, const char *format);
 mk_buffer nl_fmt(mk_buffer buff, va_list var);
 mk_buffer spc_fmt(mk_buffer buff, va_list var);
+mk_buffer binary_fmt(mk_buffer buffer, va_list args);
+mk_buffer ptr_fmt(mk_buffer buffer, va_list args);
 
 /* Helper functions */
 unsigned int _strlen(char *str);
@@ -54,4 +56,6 @@ mk_buffer rec_digits(int, mk_buffer);
 mk_buffer create_buffer(mk_buffer);
 mk_buffer add_buff(mk_buffer buff, va_list var, const char *fmt, char custom);
 void check_null(const char *);
+char *itoa(int num, int base);
+
 #endif /* _HOLBERTON_H_ */
