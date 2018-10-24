@@ -35,6 +35,8 @@ mk_buffer rot13_fmt(mk_buffer buffer, va_list args)
 				break;
 			}
 		}
+		if (!letters[i])
+			*buffer.box = *str;
 
 		buffer.box++;
 		buffer.size++;
