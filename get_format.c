@@ -15,6 +15,7 @@ mk_buffer(*get_format(const char *format))(mk_buffer buffer, va_list)
 	{"X", upp_hex_fmt},
 	{"b", binary_fmt},
 	{"p", ptr_fmt},
+	{"S", cap_s_fmt},
 	{" ", spc_fmt},
 	{"\n", nl_fmt},
 	{"\0", NULL},

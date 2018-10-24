@@ -1,0 +1,46 @@
+.TH man 2 "23 Oct 2018" "0.01" "_printf man paage"
+.SH NAME
+.B _Printf
+- An amazing duplicate of the one and only printf 
+.SH SYNOPSIS
+Prints a string that can accept variables and prints it out.
+.SH DESCRIPTION
+A colloborative project to create a printf function. We learn to manage a git
+repository and to handle the various functions required for the printf Our printf has many features of the printf found in the C standard library. 
+.SH CONVERSION SPECIFIERS
+Specifiers represented with a % and a character can be applied to display the
+value
+
+.B c
+- The c specifier will display a character that is provided
+.RS 3
+.B	eg:
+%c, 'h' -> h
+
+.RE
+.B s
+- The s specifier will display a string that is provided
+.RS 3
+.B	eg:
+%s, "Hello, Holberton!" - > Hello, Holberton!
+.RE
+
+.B % 
+- The % specifier will display a % 
+
+.RS 3
+.B	eg:
+%% -> %
+.RE
+
+.B i, d
+- The i & d specifier will display an integer that is provided.
+.RS 3	i and d will display the same thing and is only used differently with
+	scanf
+.RE
+.SH SEE ALSO
+.I functions
+.SH BUGS
+Plenty of bugs to be fixed.
+.SH Created by:
+Shoji Takashima, Wescott Sharples

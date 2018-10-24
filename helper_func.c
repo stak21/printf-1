@@ -36,3 +36,10 @@ mk_buffer spc_fmt(mk_buffer buff, va_list var)
 	(void)var;
 	return (buff);
 }
+
+int is_printable(int i)
+{
+	if (i > 32 && i <= 127)
+		return (1);
+	return (0);
+}
