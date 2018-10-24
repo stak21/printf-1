@@ -54,6 +54,10 @@ int _printf(const char *format, ...)
 		}
 		else if (*format == '%' && *(format + 1) == '\0')
 		{
+			write(1, container.start, container.size);
+			free(container.start);
+			va_end(args);
+
 			return (-1);
 		}
 		else
