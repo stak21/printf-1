@@ -9,7 +9,7 @@
 
 mk_buffer char_fmt(mk_buffer buffer, va_list args)
 {
-	unsigned char c = (unsigned char)va_arg(args, int);
+	unsigned char c = va_arg(args, int);
 
 	*buffer.box = c;
 	buffer.size += 1;
