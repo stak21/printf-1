@@ -7,10 +7,7 @@ mk_buffer create_buffer(mk_buffer container)
 	container.box = malloc(sizeof(char) * 1024);
 	container.start = container.box;
 	if (!container.box)
-	{
-		write(1, "Error\n", 6);
-		exit(99);
-	}
+		exit(-1);
 	return (container);
 }
 
