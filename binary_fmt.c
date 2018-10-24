@@ -9,7 +9,7 @@
  */
 mk_buffer binary_fmt(mk_buffer buffer, va_list args)
 {
-	int j, len;
+	int j, len, temp;
 	unsigned int num;
 	int binary_arr[1000];
 
@@ -18,8 +18,10 @@ mk_buffer binary_fmt(mk_buffer buffer, va_list args)
 	len = 0;
 	while (num > 0)
 	{
-		binary_arr[len] = num % 2;
-		num = num / 2;
+		temp = 0;
+		temp = num % 2;
+		binary_arr[len] = temp + 48;
+		num /= 2;
 		len++;
 	}
 
