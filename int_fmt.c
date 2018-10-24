@@ -2,18 +2,28 @@
 
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
-	long int num;
-	unsigned int lnum;
+	int num;
+	int lnum;
 
 	num = va_arg(args, int);
-	if (num > 214748364799)
+
+	if (num == -2147483648)
 	{
-		_printf("Error");
-		exit(1);
+		*buffer.box = '-';
+		buffer.box++;
+		buffer.size+= 1;
+		*buffer.box = '2';
+		buffer.box++;
+		buffer.size+= 1;
+		num = 147483648;
+		buffer = rec_digits(num, buffer);
+		buffer.box--;
+		return (buffer);
 	}
+
 	if (num < 0)
 	{
-		num = -((unsigned int)num);
+		num = -num;
 		lnum = num;
 		buffer = add_buff(buffer, args, 0, '-');
 	}
