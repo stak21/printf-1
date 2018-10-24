@@ -54,4 +54,7 @@ mk_buffer rec_digits(int, mk_buffer);
 mk_buffer create_buffer(mk_buffer);
 mk_buffer add_buff(mk_buffer buff, va_list var, const char *fmt, char custom);
 void check_null(const char *);
+int is_printable(char);
+char *cvrt_upper_hex(int i);
+mk_buffer cap_s_fmt(mk_buffer buff, va_list var);
 #endif /* _HOLBERTON_H_ */
