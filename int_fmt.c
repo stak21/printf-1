@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+* int_fmt - adds the int value into the buffer
+* @buffer: holds the members for box, size and startls
+* @args: list of passed in variables
+* Return: returns the buffer struct
+*/
 mk_buffer int_fmt(mk_buffer buffer, va_list args)
 {
 	int num;
@@ -11,10 +17,10 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 	{
 		*buffer.box = '-';
 		buffer.box++;
-		buffer.size+= 1;
+		buffer.size += 1;
 		*buffer.box = '2';
 		buffer.box++;
-		buffer.size+= 1;
+		buffer.size += 1;
 		num = 147483648;
 		buffer = rec_digits(num, buffer);
 		buffer.box--;
@@ -37,6 +43,13 @@ mk_buffer int_fmt(mk_buffer buffer, va_list args)
 	buffer.box--;
 	return (buffer);
 }
+
+/**
+* rec_digits - actually adds the int value into the buffer
+* @buffer: holds the members for box, size and startls
+* @lnum: the number to be added
+* Return: returns the buffer struct
+*/
 mk_buffer rec_digits(int lnum, mk_buffer buffer)
 {
 	if (lnum == 0)
