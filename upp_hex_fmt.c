@@ -25,6 +25,7 @@ mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args)
 	}
 
 	buffer.box--;
+	free(rev_hex);
 	return (buffer);
 }
 
