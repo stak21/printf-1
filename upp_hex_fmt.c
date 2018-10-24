@@ -11,6 +11,7 @@ mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args)
 {
 	char *rev_hex;
 	int i, len;
+
 	i = 0;
 	rev_hex = cvrt_upper_hex(va_arg(args, int));
 	len = _strlen(rev_hex);
@@ -26,6 +27,12 @@ mk_buffer upp_hex_fmt(mk_buffer buffer, va_list args)
 	buffer.box--;
 	return (buffer);
 }
+
+/**
+* cvrt_upper_hex - converts an integer to a hex
+* @i: holds the number to convert
+* Return: a pointer to the converted hex
+*/
 char *cvrt_upper_hex(int i)
 {
 	int temp, len, n, flag, digit;
@@ -64,4 +71,4 @@ char *cvrt_upper_hex(int i)
 	}
 	ret_hex[len] = '\0';
 	return (ret_hex);
-}	
+}
